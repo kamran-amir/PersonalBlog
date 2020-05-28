@@ -1,0 +1,163 @@
+/* todayStory  Section Start Here */
+/* use a grid in todayStory Section */
+#todayStory {
+    background-color: white;
+
+     display: grid;
+     grid-template-columns: 1fr 2fr 2fr 2fr  2fr 2fr 1fr;
+     grid-auto-rows: minmax(100px,auto);
+     grid-gap: 120px;
+     grid-template-areas: 
+    
+     ". artHeader artHeader  artHeader artHeader artHeader . "
+     ". art art travel  travel  travel . "
+     ". art2 art2 travel2  travel2  travel2 . "
+     ". lifeStyle   lifeStyle  lifeStyle fashion fashion . "
+     ;
+}
+/* todayStory  Section Start Here */
+@media only screen and (max-width:900px){
+    #todayStory {
+        grid-area: todayStory; 
+        display: grid;
+        grid-template-columns:  12fr ;
+        grid-auto-rows: minmax(100px,auto);
+        grid-gap: 50px;
+        grid-template-areas: 
+       
+        " artHeader "
+        " art   "
+        " travel   "
+        "art2  "
+        " travel2"
+        "lifeStyle    "
+        "fashion  "
+        
+        ;
+   }
+  
+}
+/* inside todayStory  Section Start Here */
+
+.artHeader {
+    grid-area: artHeader;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.artHeader h5{
+    color:#2b2b2b;
+    letter-spacing: 5px;
+}
+
+
+
+/*  todayStory  Section  first left side Start Here */
+.art {
+    grid-area: art;  
+}
+@media only screen and (max-width:900px){
+
+    .art {
+        text-align: center;
+    }
+    .art h1 {
+        font-size: 18px;
+   }  
+}
+/*  todayStory  Section  firs right  side Start Here */
+.travel {
+    grid-area: travel;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.travel a{
+    display: block;
+    color: #44c0fe;
+    font-size: 32px;
+    margin:  30px 0px ;
+  }
+  
+  .travel input {
+      margin-top: 30px;
+    }
+  
+  hr {
+      width:80%;
+       height:1px;
+       background: #fff 
+  }
+/*  todayStory  Section  second left side Start Here */
+ 
+.art2{
+    grid-area: art2;
+}
+.art2 h1{
+    font-size: 46px;
+}
+
+/*  todayStory  Section  second right side Start Here */
+ 
+.travel2{
+    grid-area: travel2;
+}
+.lifeStyle {
+    grid-area: lifeStyle ;
+    
+}
+.fashion {
+    grid-area: fashion;
+    
+}
+
+
+#todayStory img {
+  width:100%;
+}
+@media only screen and (max-width:900px){
+
+    .travel {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    .travel a {
+        font-size: 16px;
+    }
+
+    hr{
+        margin: 10px;
+    }
+
+    .art2 h1 {
+        font-size: 26px;
+    }
+
+
+  
+  }
+
+
+@media only screen and (max-width:900px){
+
+    .travel {
+        text-align: center;
+        flex-direction: column-reverse;
+    }
+    .travel a {
+        font-size: 16px;
+    }
+
+    hr{
+        margin: 10px;
+    }
+
+    .art2 h1 {
+        font-size: 26px;
+    }
+
+
+  
+  }
+  
+

@@ -1,0 +1,330 @@
+@import "todayStory.css";
+@import "popularStory.css";
+@import "footer.css";
+
+
+*{
+ box-sizing: border-box;
+}
+body {
+    font-family: Poppins;
+}
+
+
+ /* texColor style in common use  */
+
+.titleText {
+    font-size:30px;
+    letter-spacing: 5px;
+    color: #000000;
+}
+.paragraph {
+   font-size: 16px;
+   line-height: 25px;
+}
+
+ /* make agrid in main div  */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr 5fr 1fr;
+    grid-auto-rows: minmax(100px,auto);
+    margin: 0 auto;
+    grid-template-areas:  
+    " . header header ."
+    " about about about about "
+    " todayStory todayStory todayStory  todayStory  "
+    " popularStory popularStory popularStory  popularStory"
+    " footer footer footer footer"
+    ;      
+}
+.grid-container> section {
+    padding-top:120px;
+    
+}
+@media only screen and (max-width:900px){
+    .grid-container> section {
+        padding-top:50px;   
+    }   
+}
+
+
+/* Header Section Start Here */
+#header {
+    grid-area: header; 
+    padding:60px 0px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.nav a {
+    text-decoration: none;
+}
+.nav h2 {
+     margin: 0;
+}
+
+@media only screen and (max-width:900px){
+    .navItem {
+        flex: 1 100%;
+        padding: 10px;
+    }
+
+  .nav   {
+      text-align: center;
+  }
+    
+    
+}
+/* Menu In Header Section Start Here  */
+.menuBar{
+    flex: 1 1 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;   
+}
+
+.menuBar ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    margin:0px;
+    padding:0px;    
+}
+
+.menuBar ul a {
+    text-decoration: none;
+    color:#2b2b2b;
+    font-size: 16px;
+    letter-spacing: 5.45px;
+    margin-right: 20px;
+    cursor:pointer;
+    position: relative;
+    transition: all linear .2s;
+}
+/* Menu In Header Section Mobile Version  */
+@media only screen and (max-width:900px){
+    .menuBar ul  {
+        display: block;
+    }
+    .menuBar li  {
+        margin:20px;
+    }    
+    
+}
+/* Menu Item when i hover */
+.menuBar ul a:after{
+    position: absolute;
+    height: 1px;
+    margin: 0 auto;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 0;
+    color: #000;
+    background-color: #3bbced;
+    left: 0;
+    transition: all linear .2s;
+    bottom: -3px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+
+}
+.menuBar ul a:hover {
+    color:#3bbced;
+}
+
+.menuBar ul a:hover::after{
+    width: 100%;
+}
+
+/* About Section Start Here */
+#about {
+    grid-area: about; 
+    display: grid;
+    grid-template-columns:1fr 1.5fr 4fr 2.5fr  1fr ;
+    grid-auto-rows: minmax(100px,auto);
+    grid-gap: 5px;
+    grid-template-areas: 
+    " . postHeader   postHeader  postCard ."
+    ;
+    background: url(../img/18-copy.png) no-repeat  ; 
+    background-size: cover;
+    background-position: 0px -180px;
+}
+/* About Section in Mobile Version */
+@media only screen and (max-width:900px){
+    #about {
+        grid-area: about; 
+        display: grid;
+        grid-template-columns:1fr 10fr 1fr ;
+        grid-auto-rows: minmax(100px,auto);
+        grid-template-areas: 
+        " . postHeader . "
+        " . postCard . "
+        ;
+    }
+}
+
+.postHeader{  
+    grid-area: postHeader;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    padding-top: 250px;
+ }
+
+ .postHeader h1{
+    color:#ffffff;
+ }
+
+ @media only screen and (max-width:900px){
+    .postHeader {
+        padding-top: 10px;
+    }
+    .postHeader h1 {
+        font-size: 22px;
+        color: #000000;
+    }
+    .postHeader p {
+        font-size: 16px;
+        color: #000000;
+    }   
+}
+/* Left Side in About Section */
+ .profileCard {
+     display: flex;
+     align-items: center;
+ }
+/* Left Side in About Section  mobile version*/
+ @media only screen and (max-width:900px){
+    .profileCard  {
+         display: initial; 
+         text-align: center;
+    }  
+}
+/* Right Side in About Section   version*/
+
+ .postCard{
+    grid-area: postCard;
+    display: flex;
+    justify-content: center;
+ }
+/* Right Side in About Section   version*/
+ @media only screen and (max-width:900px){
+  
+    .postCard {
+        text-align: center;
+    }
+    
+}
+/*  About Section  Right Side text  Style */
+ .innerPostCard {
+    background-color: rgba(245, 244, 240);
+    padding: 50px;
+ }
+ .innerPostCard p{
+    margin : 50px 0px 50px 0px;
+ }
+ @media only screen and (max-width:900px){
+  
+    .profileCardText{
+        padding-left: 0px;
+    }
+    .innerPostCard h1{
+         font-size: 22px;
+     }
+     .innerPostCard h3 {
+        font-size: 18px;
+     }
+     .innerPostCard p {
+        font-size: 16px;
+     }
+}
+
+/*  About Section  Left Side text  Style */
+ .profileCardText {
+     padding-left:30px;
+     color:#ffffff
+ }
+.input {
+    font-size: 11px;
+    letter-spacing: 5px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    padding: 15px 30px 15px 30px;
+    font-weight: bold;
+    border-style: none;
+    background-color: #f7f6f6;
+}
+
+/*  About Section  Left Side img slide style*/
+  
+.slideImg {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;  
+}
+.slideImg img {
+    margin:10px 10px -6px 10px;
+} 
+
+/*  About Section  Left Side img slide style mobile version*/
+@media only screen and (max-width:1835px){
+    .slideImg {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;  
+    }
+}
+@media only screen and (max-width:900px){
+    .slideImg img {    
+        margin-bottom: 15px;
+    }
+}
+.socialNetwork i {
+    color: #2b2b2b ; 
+    margin-right:20px;
+}
+
+#todayStory {
+    grid-area: todayStory; 
+}
+
+#popularStory{
+    grid-area: popularStory; 
+}
+
+#post3 {
+    grid-area: post3; 
+}
+
+#instagram {
+    grid-area: instagram; 
+}
+
+#footer {
+    grid-area: footer; 
+}
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
